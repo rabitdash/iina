@@ -1424,7 +1424,7 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
     additionalInfoView.isHidden = true
     isMouseInSlider = false
 
-    if let index = fadeableViews.index(of: additionalInfoView) {
+    if let index = fadeableViews.firstIndex(of: additionalInfoView) {
       fadeableViews.remove(at: index)
     }
 
@@ -1908,7 +1908,7 @@ class MainWindowController: NSWindowController, NSWindowDelegate {
   }
 
   private func removeTitlebarViewFromFadeableViews() {
-    if let index = (self.fadeableViews.index { $0 === titleBarView }) {
+    if let index = (self.fadeableViews.firstIndex { $0 === titleBarView }) {
       self.fadeableViews.remove(at: index)
     }
   }

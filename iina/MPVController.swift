@@ -254,8 +254,8 @@ class MPVController: NSObject {
       return Preference.bool(for: key) ? nil : "no"
     }
 
-    setUserOption(PK.defaultCacheSize, type: .int, forName: MPVOption.Cache.cacheDefault)
-    setUserOption(PK.cacheBufferSize, type: .int, forName: MPVOption.Cache.cacheBackbuffer)
+//    setUserOption(PK.defaultCacheSize, type: .int, forName: MPVOption.Cache.cacheDefault)
+//    setUserOption(PK.cacheBufferSize, type: .int, forName: MPVOption.Cache.cacheBackbuffer)
     setUserOption(PK.secPrefech, type: .int, forName: MPVOption.Cache.cacheSecs)
 
     setUserOption(PK.userAgent, type: .other, forName: MPVOption.Network.userAgent) { key in
@@ -527,7 +527,7 @@ class MPVController: NSObject {
   func getNode(_ name: String) -> Any? {
     var node = mpv_node()
     mpv_get_property(mpv, name, MPV_FORMAT_NODE, &node)
-    let parsed = try? MPVNode.parse(node)
+    let parsed = ((try? MPVNode.parse(node)) as Any??)
     mpv_free_node_contents(&node)
     return parsed!
   }

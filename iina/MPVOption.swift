@@ -867,13 +867,13 @@ struct MPVOption {
     /** --cache=<kBytes|yes|no|auto> */
     static let cache = "cache"
     /** --cache-default=<kBytes|no> */
-    static let cacheDefault = "cache-default"
+//    static let cacheDefault = "cache-default"
     /** --cache-initial=<kBytes> */
     static let cacheInitial = "cache-initial"
     /** --cache-seek-min=<kBytes> */
     static let cacheSeekMin = "cache-seek-min"
     /** --cache-backbuffer=<kBytes> */
-    static let cacheBackbuffer = "cache-backbuffer"
+//    static let cacheBackbuffer = "cache-backbuffer"
     /** --cache-file=<TMP|path> */
     static let cacheFile = "cache-file"
     /** --cache-file-size=<kBytes> */
